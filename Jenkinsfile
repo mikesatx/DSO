@@ -135,10 +135,9 @@ def buildAndRegisterDockerImage() {
 def dockerRegistryLogin() {
     def login_command = ""
     withDockerContainer("garland/aws-cli-docker") {
-        login_command = //sh(returnStdout: true,
-            //script: "aws ecr get-login --region ${AWS_REGION} | sed -e 's|-e none||g'"
-              sh("eval \$(aws ecr get-login --region ${AWS_REGION} --no-include-email | sed 's|https://||')")
-        //)
+        login_command = sh(returnStdout: true,
+            script: "aws ecr get-login --region ${AWS_REGION} | sed -e 's|-e none||g'"
+        )
     }
     sh "${login_command}"
 }

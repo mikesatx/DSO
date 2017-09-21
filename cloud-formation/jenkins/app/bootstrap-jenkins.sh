@@ -7,6 +7,7 @@ JENKINS_DATA_HOME="/var/jenkins_home"
 JENKINS_USER="ec2-user"
 JENKINS_IMAGE="jenkins"
 
+# https://store.docker.com/editions/community/docker-ce-server-centos?tab=description
 echo "================ Installing docker ================"
 yum install -y yum-utils > /dev/null
 yum-config-manager --enable rhui-REGION-rhel-server-extras

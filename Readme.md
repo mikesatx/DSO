@@ -1,4 +1,4 @@
-# DevSecOps (DSO) CI/CD Pipeline POC
+# MacMillan CI/CD Pipeline POC
 
 # Jenkins Multibranch CI/CD Pipeline
 

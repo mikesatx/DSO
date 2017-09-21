@@ -321,6 +321,10 @@ Resources:
               command: !Sub |
                   chkconfig jenkins on
                   service jenkins start
+            3-first-pass:
+              command: !Sub |
+                  JENKINSPW="cat /var/jenkins_home/secrets/initialAdminPassword"
+                  
   InstanceReadyHandle: 
     Type: "AWS::CloudFormation::WaitConditionHandle"
   InstanceIsReady: 
@@ -341,3 +345,7 @@ Outputs:
     Value: !GetAtt Instance.PublicIp
     Export: 
       Name: !Sub "${System}-${Environment}-jenkins-PublicIp"
+  InitialAdminPassword:
+    Value: !GetAtt Instance.Password
+    Export: 
+      Name: !Sub "${JENKINSPW}"

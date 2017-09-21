@@ -43,7 +43,6 @@ function start {
             --detach \
             --publish 80:"${JENKINS_PORT}" \
             --publish 50000:50000 \
-            --publish 22:22 \
             --volume "${JENKINS_DATA_HOME}:/var/jenkins_home" \
             --volume /var/run/docker.sock:/var/run/docker.sock \
             --volume "${DOCKER_COMMAND}:/usr/bin/docker" \

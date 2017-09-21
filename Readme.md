@@ -1,9 +1,6 @@
-# DevSecOps CI/CD Pipeline Example
+# DevSecOps (DSO) CI/CD Pipeline POC
 
-# Jenkins Multibranch Pipeline
-
-This example uses a [Jenkins multi-branch pipelines].
-The code for this pipeline can be found [here](./Jenkinsfile).
+# Jenkins Multibranch CI/CD Pipeline
 
 Jenkins multi-branch pipelines build all your branches in your repository under source code
 control (e.g. github) automatically. Note that you can explicitly include/exclude branch using
@@ -17,7 +14,7 @@ Furthermore, __"standard"__ development processes can now not only be applied to
 application code, but also to the pipeline code, specifically source code control, testing, 
 and code review.
 
-## Pipeline Steps
+## CI/CD Steps
 
 1. Build the Java [Spring Boot] [application](./webapp/src/main) using [Apache Maven]
    This includes running [unit tests](./webapp/src/test//java).
@@ -101,26 +98,6 @@ process:
 16. Manual tests (if any are executed against the Test environment
 17. If problems are detected, return to step 3
 18. Accept changes and push to production
-
-
-## Possible Extensions
-
-1. Automate the creation and deletion of temporary development branch environment
-1. Create separate test suites to allow for a smoke vs. a full suite of tests.
-   Smoke tests would always be applied to each environment, including production.
-   The full suite of tesst would only be executed against pre-production environments.
-2. Application/browser tests are executed against all targetted brower/platform configurations
-   using a hosted service, such as [Browserstack] or [Saucelabs].
-3. Add performance testing in the pipeline, e.g. using [Taurus] and/or [Apache jMeter].
-4. Penetration tests are executed as part of the pipeline,e.g. using OWAPS' [ZAProxy]
-5. Integrate a notification mechanism with the pipeline, e.g. [Slack](./doc/slack-integration.md)
-6. If an Restful API component is added, use [Newman] to run API tests using [Postman] 
-   test collections via [Newman Docker image].
-
-
-## How to Install
-[Installation instructions](./doc/Install.md) can be found [here]((./doc/Install.md)).
-
 
 
 [Jenkins multi-branch pipelines]: https://jenkins.io/blog/2015/12/03/pipeline-as-code-with-multibranch-workflows-in-jenkins/

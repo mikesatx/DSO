@@ -172,7 +172,7 @@ scripts and subsequently configure Jenkins:
     b. Specify a `Hello World application` as the Display Name (Optional)
     c. Add your GitHub repo as a source using the `Add Source` button with the GitHub option
        - Select the github Credentials ID you created earlier (if repo is private)
-       - Enter your organization's name, e.g. `boozallen`
+       - Enter your organization's name, e.g. `macmillan`
        - Select the repository, e.g. `devsecops-example-helloworld`
        - Select the `Save` button
     

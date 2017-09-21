@@ -5,7 +5,7 @@ set -x
 
 JENKINS_DATA_HOME="/var/jenkins_home"
 JENKINS_USER="ec2-user"
-JENKINS_IMAGE="mikesatx/jenkins-dso-master:latest"
+JENKINS_IMAGE="jenkins"
 
 echo "================ Installing docker ================"
 yum install -y yum-utils > /dev/null
